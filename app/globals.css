@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Italiana&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #1A1A1A;
+    --secondary: #B8860B;
+    --accent: #8B0000;
+    --background: #F5F5DC;
+  }
+
+  body {
+    @apply bg-background text-primary-light antialiased;
+    font-family: 'Lato', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 2px 8px rgba(184, 134, 11, 0.3);
+  }
+}
+
+@layer utilities {
+  .animate-shimmer {
+    background-size: 200% 100%;
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(184, 134, 11, 0.2) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2s infinite;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-light;
+}
